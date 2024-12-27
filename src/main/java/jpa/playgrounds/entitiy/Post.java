@@ -5,14 +5,18 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users")
+@Table(name = "posts")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class User {
+public class Post {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "post_id")
     private Long id;
 
-    @Column(length = 10, nullable = false)
-    private String userName;
+    @Column(length = 20, nullable = false)
+    private String title;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 }
