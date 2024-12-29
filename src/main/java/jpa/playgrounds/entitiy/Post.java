@@ -1,6 +1,7 @@
 package jpa.playgrounds.entitiy;
 
 import jakarta.persistence.*;
+import jpa.playgrounds.common.entity.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
